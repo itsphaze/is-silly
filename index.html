@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>is silly</title>
+  </head>
+  <body>
+
+    <h1 style="text-align: center;"><span id="who"></span> is silly!</h1>
+
+
+    <script>
+      // find who is silly
+      let parts = window.location.hostname.split('.');
+      parts.splice(parts.length-2, 2);
+      if(parts.length === 0) parts = ['you'];
+
+      document.getElementById('who').textContent = parts.join(' ')
+      document.title = `${parts.join(' ')} is silly!`
+    </script>
+  </body>
+</html>
